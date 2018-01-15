@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/Tileset.tres" type="TileSet" id=3]
+[ext_resource path="res://scenes/Porta.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node"]
+
+script/script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 128.692, 74.9346 )
+
+[node name="AnimatedSprite" parent="Player"]
+
+frame = 0
+
+[node name="Camera2D" parent="Player"]
+
+current = true
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell/size = Vector2( 16, 16 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 65535, 5, 16, 5, 29, 5, 131071, 5, 65552, 5, 65565, 5, 196607, 5, 131088, 5, 131101, 5, 262143, 5, 196624, 5, 196637, 5, 327679, 5, 262160, 5, 262173, 5, 393215, 5, 327696, 5, 327709, 5, 458751, 5, 393220, 3, 393221, 4, 393232, 5, 393245, 5, 524287, 5, 458781, 5, 589823, 5, 524317, 5, 655359, 5, 589824, 2, 589825, 2, 589826, 2, 589827, 2, 589828, 2, 589829, 2, 589830, 2, 589831, 2, 589832, 2, 589833, 2, 589834, 2, 589835, 2, 589836, 2, 589837, 2, 589838, 2, 589839, 2, 589840, 5, 589841, 2, 589842, 2, 589843, 2, 589844, 2, 589845, 2, 589846, 2, 589847, 2, 589848, 2, 589849, 2, 589850, 2, 589851, 2, 589852, 2, 589853, 5 )
+
+[node name="Porta" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 264, 128 )
+
+
+[editable path="Player"]
